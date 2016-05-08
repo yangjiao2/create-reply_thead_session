@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script type="text/javascript">tinymce.init({ selector:'textarea', forced_root_block : ""});</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+<a href = "/users/dashboard" class = "btn btn-info">Back</a>
+
+<div class="container margin">
+    <div class="panel panel-default row">
+        <div class = "">
+            <div class="dropdown pull-right">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Actions
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                <li><a href="/users/editpost/<%=post._id%>">Edit</a></li>
+                <li><a href="/users/delete/<%=post._id%>">Delete</a></li>
+
+                </ul>
+            </div>
+            <% if (edit_id == post._id) { %>
+            <div class="panel-body ">
+                <form action = "" method="post">
+                <textarea class="form-control"  rows="6" cols="50" name="title"><%-post.title%></textarea>
+                    <button type= "submit" class = "btn btn-success" id = "save-btn"> Save </button>
+                </form>
+            </div>
+            <% } else {%>
+                <div class="panel-body "><h3><%-post.title%></h3><br><small><%-post.user.username%> at <%-moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')%></small></div>
+            <% } %>
+
+        </div>
+    </div>
+    <!--<div class="container">-->
+            <% for(var i=0; i< threads.length; i++) {%>
+            <div class="panel panel-default msg row">
+                <div class=" margin dropdown pull-right">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Actions
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/users/editthread/<%=post._id%>/<%=threads[i]._id%>">Edit</a></li>
+                        <li><a href="/users/deletethread/<%=threads[i]._id%>">Delete</a></li>
+
+                    </ul>
+                </div>
+
+                <% if (edit_thread == threads[i]._id) { %>
+                <div class="panel-body ">
+                    <form action = "" method="post">
+                        <textarea class="form-control"  rows="6" cols="50" name="message"><%-threads[i].message%></textarea>
+                        <button type= "submit" class = "margin btn btn-success" id = "save-btn"> Save </button>
+                    </form>
+                </div>
+                <% } else {%>
+                <div class="panel-body"><h5><%-threads[i].message%></h5><br><small><%-threads[i].user.username%> at <%-moment(threads[i].createdAt).format('YYYY-MM-DD HH:mm:ss')%></small></div>
+                <% } %>
+            </div>
+            <% } %>
+
+        <form action="" method = "post">
+
+            <div class="msg">
+            <textarea class="form-control" rows="3" cols="50" name="thread" placeholder="New Thread"></textarea>
+                <button type= "submit" class = "btn btn-success margin" id = "save-btn">Submit</button>
+
+            </div>
+
+        </form>
+
+    <!--</div>-->
+
+</div>
+
+
+</div>
+
+</body>
+</html>

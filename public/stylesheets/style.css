@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.msg {
+  background-color: #F4F6F8;
+  padding:5px;
+  border-top:1px solid #ddd;
+  margin-left: 30px;
+  margin:5px;
+
+}
+
+.alight-right-button{
+  margin:3px;
+  text-align: right;
+  width: 7em;
+
+}
+
+.margin{
+  margin: 4px;
+}
+
+.panel-body {
+  clear: both;
+}

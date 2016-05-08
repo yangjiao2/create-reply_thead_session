@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<div class = "container">
+
+    <div class = "col-xs-4 panel panel-default  row-md-offset-2 col-md-5 col-md-offset-2">
+        <div class = "panel-heading">
+            <h2 class = "panel-title">
+                Login
+            </h2>
+            </div>
+            <div class="panel-body">
+    <form action = "" method="post">
+        <small class="text-warning"><%= message %></small>
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Username address</label>
+            <input type="text" class="form-control" name="username" placeholder="Enter username">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </fieldset>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+                </div>
+    </div>
+
+
+
+    <div class = " col-xs-4 panel panel-default row-md-offset-2 col-md-5 col-md-offset-2">
+        <div class = "panel-heading">
+            <h2 class = "panel-title">
+                Register
+            </h2>
+            </div>
+        <div class="panel-body">
+
+    <form action = "" method="post">
+        <fieldset class="form-group">
+            <label>Full name</label>
+            <input type="text" class="form-control" name="newfullname" placeholder="Enter fullname">
+        </fieldset>
+        <fieldset class="form-group">
+            <label> Username address</label>
+            <input type="text" class="form-control" name="newusername" placeholder="Enter username">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control span4" name="newpassword" placeholder="Password">
+        </fieldset>
+        <button class="btn btn-lg btn-success btn-block " type="submit">Register</button>
+    </form>
+            </div>
+            </div>
+        </div>
+
+</div>
+
+</body>
+</html>
